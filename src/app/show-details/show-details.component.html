@@ -1,0 +1,36 @@
+<section>
+  <div *ngIf="isLoading">
+    <img src="../../assets/images/loading.gif"/>
+  </div>
+  <div *ngIf="isErr">
+    <h3>Something went wrong. Please try later</h3>
+  </div>
+  
+  <div class="flex-container" *ngIf="!isLoading && !isErr">    
+    <div>
+      <img src={{showDetail?.image.original}}/>
+    </div>       
+    <div>
+        <h2>{{showDetail?.name}}</h2>        
+        <p>
+            <!-- {{showDetail?.genres}} |  {{showDetail?.schedule.days}} 
+            | {{showDetail?.schedule.time}} |  {{showDetail?.type}} -->
+          <strong>Genre:</strong> {{showDetail?.genres}} <br/>
+          <strong> Schedule:</strong>  {{showDetail?.schedule.days}}<br/>
+          <strong> Time:</strong>  {{showDetail?.schedule.time}}<br/>
+          <strong> Status:</strong>  {{showDetail?.status}}<br/>
+          <strong> Type:</strong>  {{showDetail?.type}} <br/>
+          <strong> IMDB:</strong> {{showDetail?.externals?.imdb}}
+        </p>        
+        <strong>Summary :</strong> 
+        <div [innerHTML]="showDetail?.summary"></div> 
+         <div class="moreInfo">
+           For more information,
+           <a href={{showDetail?.url}} target="_blank">Click Here</a>
+         </div>
+          <div class="text-center">
+            <button class="backBtn" [routerLink]="['']">Back</button>
+          </div>      
+    </div>
+  </div>
+</section>

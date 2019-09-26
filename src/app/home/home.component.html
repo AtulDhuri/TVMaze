@@ -1,0 +1,25 @@
+
+<div *ngIf="isLoading">
+    <img src="../../assets/images/loading.gif"/>
+</div>
+<div *ngIf="isErr">
+  <h3>Something went wrong. Please try later</h3>
+</div>
+<!-- <input type="text" [formControl]="searchControl"/> -->
+<section>
+<h1 class="text-center"> Welcome to the TVMaze</h1>
+<ul class="container" *ngIf="!isLoading && !isErr">   
+  <li *ngFor="let program of programsList">
+    <h2>{{ program.name }}</h2>
+    <div class="image">
+    <img [src]="program.show.image?.medium || '../../assets/images/default.jpg'"/> 
+    <button class="readMore" [routerLink]="['/shows', program?.show?.id]">Click here to know more</button>
+   </div> 
+    <h3> <span class="text-small">Language : </span>{{ program.show?.language}}</h3>
+    <h3><span class="text-small">Type : </span> {{ program.show?.type}}</h3>
+  </li>  
+</ul>
+</section>
+
+
+
