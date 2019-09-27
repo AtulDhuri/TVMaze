@@ -13,7 +13,7 @@ export class ShowDetailsComponent implements OnInit, OnDestroy {
   private alive: boolean;
   isLoading: boolean;
   isErr: boolean;
-  days: any[]
+  days: any[];
   constructor(
     private route: ActivatedRoute,
     private mas: MazeapiService
