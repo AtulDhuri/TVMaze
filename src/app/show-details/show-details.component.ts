@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MazeapiService } from '../shared/mazeapi.service';
-import { takeWhile, finalize, tap } from 'rxjs/operators';
+import { takeWhile, finalize} from 'rxjs/operators';
 
 @Component({
   selector: 'app-show-details',
