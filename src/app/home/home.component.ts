@@ -50,13 +50,16 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.searchControl.valueChanges.pipe(
       debounceTime(300),
       distinctUntilChanged(),
-      switchMap(query => this.mas.searchShows(query))
+      switchMap(query => {
+        if (query) {
+        return this.mas.searchShows(query);
+        } else {
+          return this.mas.getFullSchedule();
+        }
+      })
     ).subscribe(shows => {
        console.log(shows);
       this.programsList = shows;
-      if (this.programsList.length < 1) {
-        this.getSchedules();
-      }
     });
   }
 }
