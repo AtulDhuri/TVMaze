@@ -3,13 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-
-import { HttpClientModule  } from '@angular/common/http';
-
+import { ShowDetailsComponent } from './show-details/show-details.component';
 
 import { route } from './routerConfig';
 import { RouterModule } from '@angular/router';
-import { ShowDetailsComponent } from './show-details/show-details.component';
+import { HttpClientModule  } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({

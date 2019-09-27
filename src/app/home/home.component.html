@@ -8,10 +8,10 @@
 
 <section>
 <h1 class="text-center"> Welcome to the TVMaze</h1>
-<input type="text" [formControl]="searchControl" placeholder="Please Enter"/>
+<input type="text" [formControl]="searchControl" placeholder="Search"/>
 <ul class="container" *ngIf="!isLoading && !isErr">   
   <li *ngFor="let program of programsList">
-    <h2>{{ program.name }}</h2>
+    <h2>{{ program.show?.name }}</h2>
     <div class="image">
     <img [src]="program.show.image?.medium || '../../assets/images/default.jpg'"/> 
     <button class="readMore" [routerLink]="['/shows', program?.show?.id]">Click here to know more</button>
