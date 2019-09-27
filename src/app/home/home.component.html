@@ -5,9 +5,10 @@
 <div *ngIf="isErr">
   <h3>Something went wrong. Please try later</h3>
 </div>
-<!-- <input type="text" [formControl]="searchControl"/> -->
+
 <section>
 <h1 class="text-center"> Welcome to the TVMaze</h1>
+<input type="text" [formControl]="searchControl" placeholder="Please Enter"/>
 <ul class="container" *ngIf="!isLoading && !isErr">   
   <li *ngFor="let program of programsList">
     <h2>{{ program.name }}</h2>

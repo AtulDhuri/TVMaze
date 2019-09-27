@@ -8,7 +8,7 @@
   
   <div class="flex-container" *ngIf="!isLoading && !isErr">    
     <div>
-      <img src={{showDetail?.image.original}}/>
+      <img [src]="showDetail.image?.original || '../../assets/images/defaultbig.jpg'"/>     
     </div>       
     <div>
         <h2>{{showDetail?.name}}</h2>        
@@ -20,8 +20,9 @@
           <strong> Time:</strong>  {{showDetail?.schedule.time}}<br/>
           <strong> Status:</strong>  {{showDetail?.status}}<br/>
           <strong> Type:</strong>  {{showDetail?.type}} <br/>
-          <strong> IMDB:</strong> {{showDetail?.externals?.imdb}}
-        </p>        
+          <strong> Language:</strong>  {{showDetail?.language}}          
+        </p> 
+
         <strong>Summary :</strong> 
         <div [innerHTML]="showDetail?.summary"></div> 
          <div class="moreInfo">
