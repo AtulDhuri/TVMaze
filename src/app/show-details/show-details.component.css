@@ -27,6 +27,8 @@
       box-sizing: border-box;
       border: 2px solid #000;
       justify-content: center;
+      outline: 4px solid #fbf3f3;
+      outline-offset: 2px;
   }
 
   .backBtn{

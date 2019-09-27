@@ -11,13 +11,15 @@
 <input type="text" [formControl]="searchControl" placeholder="Search"/>
 <ul class="container" *ngIf="!isLoading && !isErr">   
   <li *ngFor="let program of programsList">
-    <h2>{{ program.show?.name }}</h2>
+    <h2 *ngIf="program?.name">{{ program?.name }}</h2>
+    <h2 *ngIf="!program?.name">{{ program?.show?.name }}</h2>
     <div class="image">
     <img [src]="program.show.image?.medium || '../../assets/images/default.jpg'"/> 
     <button class="readMore" [routerLink]="['/shows', program?.show?.id]">Click here to know more</button>
    </div> 
-    <h3> <span class="text-small">Language : </span>{{ program.show?.language}}</h3>
-    <h3><span class="text-small">Type : </span> {{ program.show?.type}}</h3>
+    <div> <span class="text-small">Language : </span>{{ program.show?.language}}</div>
+    <div><span class="text-small">Type : </span> {{ program.show?.type}}</div>
+    <div><span class="text-small" *ngIf="program?.season">Season : </span> {{ program?.season}}</div>
   </li>  
 </ul>
 </section>
