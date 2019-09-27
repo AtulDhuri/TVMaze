@@ -42,7 +42,7 @@ li{
     flex-basis: 15%;
     color: floralwhite;
     position: relative;
-    text-align: center;
+    text-align: center;     
 }
 
 li img {    
@@ -56,7 +56,9 @@ li img {
 
 li h2{
     color: white;
-    
+}
+
+.program-name{
     flex:1;
 }
 

@@ -6,7 +6,7 @@ import {  HttpClient } from '@angular/common/http';
 })
 export class MazeapiService {
 
-  url = 'http://api.tvmaze.com';
+  url = 'https://api.tvmaze.com';
 
   constructor(private http: HttpClient) { }
 
