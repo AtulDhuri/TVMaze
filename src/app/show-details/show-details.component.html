@@ -12,9 +12,9 @@
     <div>      
       <h2>{{showDetail?.name}}</h2>
       <p>
-          <span *ngIf="showDetail?.language.length"><strong> Language:</strong> {{showDetail?.language}}<br/></span>
-        <span *ngIf="showDetail?.genres.length"><strong>Genre:</strong> {{showDetail?.genres}}<br/></span>         
-        <span *ngIf="showDetail?.network.name.length"><strong>Network:</strong> {{showDetail?.network.name}}<br/></span>         
+        <span *ngIf="showDetail?.language"><strong> Language:</strong> {{showDetail?.language}}<br/></span>
+        <span *ngIf="showDetail?.genres"><strong>Genre:</strong> {{showDetail?.genres}}<br/></span>         
+        <span *ngIf="showDetail?.network?.name"><strong>Network:</strong> {{showDetail?.network?.name}}<br/></span>         
         <span *ngIf="showDetail?.schedule.days.length">
           <strong> Schedule:</strong>
           <div *ngFor="let day of showDetail.schedule.days">
@@ -23,9 +23,9 @@
           <br/>
         </span>
         <span *ngIf="showDetail?.schedule.time"><strong> Time:</strong> {{showDetail?.schedule.time}}<br/></span>        
-        <span *ngIf="showDetail?.runtime.length"><strong> RunTime:</strong> {{showDetail?.runtime}}<br/></span>        
-        <span *ngIf="showDetail?.status.length"><strong> Status:</strong> {{showDetail?.status}}<br/></span>        
-        <span *ngIf="showDetail?.type.length"><strong> Type:</strong> {{showDetail?.type}}<br/></span>                
+        <span *ngIf="showDetail?.runtime"><strong> RunTime:</strong> {{showDetail?.runtime}}<br/></span>        
+        <span *ngIf="showDetail?.status"><strong> Status:</strong> {{showDetail?.status}}<br/></span>        
+        <span *ngIf="showDetail?.type"><strong> Type:</strong> {{showDetail?.type}}<br/></span>                
         <span *ngIf="showDetail?.rating.average"><strong> Rating:</strong> {{showDetail?.rating.average }}<br/></span>
       </p>
 

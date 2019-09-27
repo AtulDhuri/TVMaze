@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   private alive: boolean;
   isLoading: boolean;
   isErr: boolean;
-  isSearchOn: boolean;
+
   constructor(private mas: MazeapiService) { }
 
   ngOnInit() {
@@ -47,17 +47,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   private setupSearch() {
-    if(this.searchControl.value = ''){
-      return;
-    }
     this.searchControl.valueChanges.pipe(
       debounceTime(300),
       distinctUntilChanged(),
       switchMap(query => this.mas.searchShows(query))
     ).subscribe(shows => {
        console.log(shows);
-       this.programsList = shows;
-       
+      this.programsList = shows;
+      if (this.programsList.length < 1) {
+        this.getSchedules();
+      }
     });
   }
 }
